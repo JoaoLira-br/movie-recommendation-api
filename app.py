@@ -4,8 +4,11 @@ import os
 import json
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
+from flask_cors import CORS
+
 
 app = Flask(__name__)
+CORS(app)  # This allows all origins by default
 
 # Load all movies from JSON files in the 'api' folder
 def load_movies_from_json(folder_path):
